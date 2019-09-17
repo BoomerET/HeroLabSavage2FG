@@ -11,19 +11,19 @@
                 <xsl:for-each select="document/public/character/attributes/attribute">
                     <xsl:choose>
                         <xsl:when test="contains(@value, '-')">
-                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="substring-before(@value, '-')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="substring-before(@value, '-')" />
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">&gt;&#13;</xsl:text>
-                             <xsl:text disable-output-escaping="yes">&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment type="number"&gt;-<xsl:value-of select="substring-after(@value, '-')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment type="number"&gt;-</xsl:text><xsl:value-of select="substring-after(@value, '-')" />
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment&gt;&#13;</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains(@value, '+')">
-                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="substring-before(@value, '+')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="substring-before(@value, '+')" />
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">&gt;&#13;</xsl:text>
-                             <xsl:text disable-output-escaping="yes">&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment type="number"&gt;+<xsl:value-of select="substring-after(@value, '+')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment type="number"&gt;+</xsl:text><xsl:value-of select="substring-after(@value, '+')" />
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment&gt;&#13;</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
-                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="@value" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&#13;&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="@value" />
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">&gt;&#13;</xsl:text>
                              <xsl:text disable-output-escaping="yes">&lt;</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment type="number"&gt;0</xsl:text>
                              <xsl:text disable-output-escaping="yes">&lt;/</xsl:text><xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' /><xsl:text disable-output-escaping="yes">Adjustment&gt;&#13;</xsl:text>
@@ -46,36 +46,30 @@
                         </xsl:otherwise>
                     </xsl:choose>
 
-
-                    <name type="string"><xsl:text><xsl:value-of select="@name" /></xsl:text>
-                    </name><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
-
-                    
                     <xsl:choose>
                         <xsl:when test="contains(@value, '-')">
-                             <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="substring-before(@value, '-')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="substring-before(@value, '-')" />
                              <xsl:text disable-output-escaping="yes">&lt;/skill></xsl:text><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
-                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;-<xsl:value-of select="substring-after(@value, '-')" /></xsl:text><xsl:text disable-output-escaping="yes">&lt;skillmod&gt;&#13;</xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;-</xsl:text><xsl:value-of select="substring-after(@value, '-')" /><xsl:text disable-output-escaping="yes">&lt;/skillmod&gt;&#13;</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains(@value, '+')">
-                             <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="substring-before(@value, '+')" /></xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="substring-before(@value, '+')" />
                              <xsl:text disable-output-escaping="yes">&lt;/skill></xsl:text><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
-                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;+<xsl:value-of select="substring-after(@value, '+')" /></xsl:text><xsl:text disable-output-escaping="yes">&lt;skillmod&gt;&#13;</xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;+</xsl:text><xsl:value-of select="substring-after(@value, '+')" /><xsl:text disable-output-escaping="yes">&lt;/skillmod&gt;&#13;</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>     
-                            <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;<xsl:value-of select="@value" /></xsl:text>
+                            <xsl:text disable-output-escaping="yes">&lt;skill</xsl:text><xsl:text disable-output-escaping="yes"> type="dice"&gt;</xsl:text><xsl:value-of select="@value" />
                              <xsl:text disable-output-escaping="yes">&lt;/skill></xsl:text><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
-                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;0&lt;skillmod&gt;</xsl:text><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
+                             <xsl:text disable-output-escaping="yes">&lt;skillmod</xsl:text><xsl:text disable-output-escaping="yes"> type="number"&gt;0&lt;/skillmod&gt;</xsl:text><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
                         </xsl:otherwise>
-
                     </xsl:choose>
 
                     <link type="windowreference">
 					<class>sw_referenceskill</class>
 					<recordname>reference.skills.<xsl:value-of select='translate(@name, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")' />@&#42;</recordname>
 				    </link><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
-
-
+                    <name type="string"><xsl:value-of select="@name" />
+                    </name><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
                     <xsl:choose>
                         <xsl:when test="number(position()) &lt; 10">
                             <xsl:text disable-output-escaping="yes">&lt;/id-0000</xsl:text><xsl:value-of select="position()" /><xsl:text disable-output-escaping="yes">&gt;&#13;</xsl:text>
@@ -84,10 +78,12 @@
                             <xsl:text disable-output-escaping="yes">&lt;/id-000</xsl:text><xsl:value-of select="position()" /><xsl:text disable-output-escaping="yes">&gt;&#13;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
-
-
                 </xsl:for-each>
                 </skills><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
+               
+
+
+               
          
             </character><xsl:text disable-output-escaping="yes">&#13;</xsl:text>
         </root>
